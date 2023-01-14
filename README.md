@@ -18,7 +18,7 @@ should arise. It can generate a
 visualizing dependencies between defined workflows, which is 
 pretty cool!
 
-<img src="dag.png" width="38%">
+<img src="figure/dag.png" width="38%">
 
 
 - [Snakemake Website][sn]
