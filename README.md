@@ -13,9 +13,9 @@ to reproduce everything.
 I have tried [GNU Make](https://www.gnu.org/software/make)
 for my work to enhance reproducibility and automation
 but got stuck with Chinese character issues on GNU Make 
-built for Windows. So I tried `Snakemake` and it looks pretty 
-good! It is based on Python so fewer cross-platform issues 
-should arise. It can generate a 
+built for Windows. So I tried [Snakemake][sn] and it looks 
+pretty good! It is based on Python so fewer cross-platform 
+issues should arise. It can generate a 
 [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) for 
 visualizing dependencies between defined workflows, which is 
 pretty cool!
