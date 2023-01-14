@@ -2,44 +2,63 @@ rule 報告:
     input:
         "figure/iris.png",
         "data/table.csv",
-        "report.qmd"
+        dummy = "world.txt",
+        script = "report.qmd"
     output:
         "report.html"
     shell:
         """
-        quarto render report.qmd --to html
+        rm {input.dummy}
+        quarto render {input.script} --to html
         """
 
 rule 繪圖:
     input:
         "data/iris.csv",
-        "plot.R"
+        script = "plot.R"
     output: 
         "figure/iris.png"
     params:
         ""
     shell:
         """
-        Rscript plot.R
+        Rscript {input.script}
         """
 
 rule 表格:
     input:
         "data/iris.csv",
-        "summary.R"
+        script = "summary.R"
     output:
         "data/table.csv"
     shell:
         """
-        Rscript summary.R
+        Rscript {input.script}
         """
 
 rule generate_iris_data:
     input:
-        "data.R"
+        "data.R",
     output:
         "data/iris.csv"
     shell:
         """
-        Rscript data.R --seed 10
+        Rscript {input[0]} --seed 10
         """
+
+
+rule World:
+    input: "hello.txt"
+    output: "world.txt"
+    shell: 
+        """
+        rm {input}
+        touch {output}
+        """
+
+rule Hello:
+    output: "hello.txt"
+    shell: "echo 'Hello world!' > {output}"
+
+
+

@@ -35,4 +35,4 @@ readr::read_csv("data/table.csv")
 
 ## Snakemake DAG
 
-<img src="figure/dag.png" width="35%">
+<img src="figure/dag.png" width="55%">
