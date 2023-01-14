@@ -1,0 +1,41 @@
+---
+title: "Snakefile Demo"
+format:
+  html:
+    code-fold: true
+    df-print: kable
+    toc: true
+    embed-resources: true
+---
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(
+    message = FALSE,
+    warning = FALSE,
+    out.width = "75%",
+    fig.align = "center",
+    attr.source = ".numberLines"
+)
+```
+
+## Figure
+
+```{r}
+knitr::include_graphics("figure/iris.png")
+```
+
+
+## Table
+
+```{r}
+readr::read_csv("table.csv")
+```
+
+
+## Snakemake DAG
+
+```{r}
+#| out.width : 35%
+knitr::include_graphics("dag.png")
+```
