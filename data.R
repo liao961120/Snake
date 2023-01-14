@@ -6,4 +6,4 @@ if (is.na(seed)) seed = 10
 set.seed(seed)
 
 idx = sample(1:nrow(iris), size = 80)
-readr::write_csv(iris[idx, ], "iris.csv")
+readr::write_csv(iris[idx, ], "data/iris.csv")

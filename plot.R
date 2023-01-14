@@ -1,7 +1,7 @@
 library(ggplot2)
 theme_set(theme_bw())
 
-data = read.csv("iris.csv")
+data = read.csv("data/iris.csv")
 plt = ggplot(data, aes(Sepal.Length, Petal.Width, color = Species)) +
     geom_point() +
     theme(legend.position = "none")

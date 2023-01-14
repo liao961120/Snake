@@ -29,13 +29,10 @@ knitr::include_graphics("figure/iris.png")
 ## Table
 
 ```{r}
-readr::read_csv("table.csv")
+readr::read_csv("data/table.csv")
 ```
 
 
 ## Snakemake DAG
 
-```{r}
-#| out.width : 35%
-knitr::include_graphics("dag.png")
-```
+<img src="figure/dag.png" width="35%">
