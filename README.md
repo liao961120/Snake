@@ -8,9 +8,9 @@ to reproduce everything.
 
 ## Snakemake
 
-I tried to use [GNU Make](https://www.gnu.org/software/make)
-for my work to enhance reproducibility and automation,
-but got stuck with issues of Chinese characters on GNU Make 
+I have tried [GNU Make](https://www.gnu.org/software/make)
+for my work to enhance reproducibility and automation
+but got stuck with Chinese character issues on GNU Make 
 built for Windows. So I tried `Snakemake` and it looks pretty 
 good! It is based on Python so fewer cross-platform issues 
 should arise. It can generate a 
