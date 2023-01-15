@@ -5,7 +5,7 @@ This is my first experience with [Snakemake][sn].
 See `./Snakefile` for the workflow. Run `bash make.sh`
 to reproduce everything. 
 
-- [The Final Report](report.html)
+- [The Final Report](https://yongfu.name/Snake/report.html)
 
 
 ## Snakemake
