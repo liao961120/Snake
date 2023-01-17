@@ -1,0 +1,29 @@
+############################################################
+### Additional config on Windows with git-bash installed ###
+############################################################
+import os
+if os.name == 'nt':
+    from snakemake.shell import shell
+    shell.executable(r'C:\Users\rd\AppData\Local\Programs\Git\bin\bash.exe')
+    shell.prefix("""
+    # Add environmental variables here
+    x=456  
+    """.strip())
+############################################################
+
+
+rule World:
+    input: "hello.txt"
+    output: "world.txt"
+    shell: 
+        """
+        cat {input} > {output}
+        rm {input}
+        """
+
+rule Hello:
+    output: "hello.txt"
+    shell: 
+        """
+        echo $x > {output}
+        """
