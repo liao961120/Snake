@@ -1,15 +1,29 @@
+############################################################
+### Additional config on Windows with git-bash installed ###
+############################################################
+import os
+if os.name == 'nt':
+    from snakemake.shell import shell
+    shell.executable(r'C:\Users\rd\AppData\Local\Programs\Git\bin\bash.exe')
+    shell.prefix("""
+    # Add environmental variables here
+    x=123   
+    """.strip())
+############################################################
+
+
 rule 報告:
     input:
         "figure/iris.png",
         "data/table.csv",
-        dummy = "world.txt",
+        dummy = "hello.txt",
         script = "report.qmd"
     output:
         "report.html"
     shell:
         """
-        rm {input.dummy}
         quarto render {input.script} --to html
+        rm {input.dummy}
         """
 
 rule 繪圖:
@@ -52,13 +66,10 @@ rule World:
     output: "world.txt"
     shell: 
         """
-        rm {input}
         touch {output}
+        rm {input}
         """
 
 rule Hello:
     output: "hello.txt"
     shell: "echo 'Hello world!' > {output}"
-
-
-

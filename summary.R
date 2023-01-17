@@ -7,3 +7,4 @@ data = read.csv("data/iris.csv") %>%
         Petal.Width = mean(Petal.Width)
     )
 readr::write_csv(data, "data/table.csv")
+

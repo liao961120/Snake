@@ -6,8 +6,15 @@ snakemake -c
 
 # Generate dependency graphs between workflows
 [[ -f figure/dag.png ]] && rm figure/dag.png
-snakemake --dag | dot -Tpng -Gdpi=300 > figure/dag.png
 
+if [[ "$OSTYPE" == "msys" ]]; then
+    printf "\nBuilding on Windows...\n"
+    source ~/.bash_profile
+    cd -
+    snakemake --dag | 2utf | dot -Tpng -Gdpi=300 > figure/dag.png
+else
+    snakemake --dag | dot -Tpng -Gdpi=300 > figure/dag.png
+fi
 # Generate report
 # snakemake --report log.html
 
