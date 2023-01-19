@@ -11,6 +11,11 @@ if os.name == 'nt':
     """.strip())
 ############################################################
 
+rule all:
+    input:
+        a = "hello.txt",
+        b = "world.txt",
+
 
 rule World:
     input: "hello.txt"
@@ -18,7 +23,7 @@ rule World:
     shell: 
         """
         cat {input} > {output}
-        rm {input}
+        # rm {input}
         """
 
 rule Hello:
