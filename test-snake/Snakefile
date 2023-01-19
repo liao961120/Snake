@@ -30,5 +30,5 @@ rule Hello:
     output: "hello.txt"
     shell: 
         """
-        echo $x > {output}
+        echo '123' > {output}
         """
